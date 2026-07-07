@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 <title>Cartelería Alto Impacto — Catálogo &amp; Cotizador</title>
 <style>
 
@@ -265,6 +267,45 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:36px 20p
   100%{transform:translateX(60vw) translateY(-22px) rotate(-3deg) scaleX(.8);opacity:0}
 }
 .bg-grain{position:absolute;inset:0;opacity:.035;mix-blend-mode:overlay}
+/* ── HERO V2 ── */
+.hero-v2{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;text-align:center;padding:0}
+.hero-slides{position:absolute;inset:0;z-index:0}
+.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;animation:heroFade 18s infinite}
+.hero-slide:nth-child(1){animation-delay:0s;background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=80&fit=crop')}
+.hero-slide:nth-child(2){animation-delay:6s;background-image:url('https://images.unsplash.com/photo-1523821741446-edb2b68bb7a0?w=1400&q=80&fit=crop')}
+.hero-slide:nth-child(3){animation-delay:12s;background-image:url('https://images.unsplash.com/photo-1567942712661-82b9b407abbf?w=1400&q=80&fit=crop')}
+@keyframes heroFade{0%,100%{opacity:0}8%,30%{opacity:1}38%,100%{opacity:0}}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(6,6,15,.55) 0%,rgba(6,6,15,.95) 100%)}
+.hero-v2 .hero-content{position:relative;z-index:2;padding:20px;max-width:800px;margin:0 auto}
+.logo-wrap{display:flex;flex-direction:column;align-items:center;line-height:1;margin-bottom:18px}
+.logo-alto{font-family:'Pacifico',cursive;font-size:clamp(3rem,10vw,6rem);color:#ff1a1a;text-shadow:0 0 15px rgba(255,26,26,.9),0 0 40px rgba(255,26,26,.5)}
+.logo-impacto{font-family:'Arial Black','Impact',sans-serif;font-size:clamp(3.5rem,13vw,8rem);font-weight:900;color:#ff1a1a;-webkit-text-stroke:2px rgba(255,180,180,.6);text-shadow:0 0 20px rgba(255,26,26,.8),0 0 60px rgba(255,26,26,.4);letter-spacing:0.05em;line-height:1}
+.hero-tagline{font-size:clamp(.9rem,2vw,1.15rem);color:rgba(232,232,240,.8);margin:0 auto 22px;max-width:520px}
+.hero-v2 .hero-badge-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.hero-v2 .badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:6px 14px;border-radius:20px;font-size:.79rem;color:rgba(232,232,240,.85)}
+.hero-v2 .badge strong{color:#fff}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-cotizar-hero{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:12px;font-size:.95rem;font-weight:700;cursor:pointer;background:transparent;border:2px solid rgba(255,26,26,.7);color:#ff6666}
+.hero-scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;cursor:pointer;animation:bounce 2s infinite;color:rgba(255,255,255,.5);font-size:.75rem;display:flex;flex-direction:column;align-items:center;gap:6px}
+.hero-scroll svg{width:24px;height:24px;stroke:currentColor;fill:none}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+@media(max-width:600px){.logo-alto{font-size:2.8rem}.logo-impacto{font-size:4rem}}
+.servicios-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:60px 20px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-title{font-size:clamp(1.5rem,3vw,2rem);font-weight:900;color:#fff;text-align:center;margin-bottom:8px}
+.section-sub{color:var(--muted);text-align:center;margin-bottom:40px;font-size:.95rem}
+.servicios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.servicio-card{background:var(--bg3);border:1px solid var(--border);border-radius:16px;padding:28px 22px;text-align:center;transition:border-color .25s,transform .25s}
+.servicio-card:hover{border-color:rgba(220,0,0,.5);transform:translateY(-4px)}
+.serv-icon{font-size:2.4rem;margin-bottom:14px}
+.servicio-card h3{font-size:1rem;font-weight:800;color:#fff;margin-bottom:8px}
+.servicio-card p{font-size:.84rem;color:var(--muted);line-height:1.55}
+.galeria-section{padding:60px 20px}
+.galeria-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
+.galeria-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;filter:brightness(.85);transition:filter .3s,transform .3s}
+.galeria-grid img:hover{filter:brightness(1) saturate(1.3);transform:scale(1.02)}
+.galeria-nota{text-align:center;margin-top:20px;font-size:.8rem;color:var(--muted)}
+@media(max-width:600px){.galeria-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -295,25 +336,64 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:36px 20p
 </nav>
 
 <!-- HERO -->
-<div class="hero">
-  <div class="hero-bg">
-    <div class="hero-glow"></div>
-    <div class="hero-glow hero-glow2"></div>
-    <div class="hero-skyline"></div>
-    <div class="hero-text-bg"><span>ALTO IMPACTO</span></div>
+<div class="hero hero-v2">
+  <div class="hero-slides">
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
   </div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h1>Cartelería <span class="ai">Alto Impacto</span></h1>
-    <p class="sub">Letras corpóreas · Frentes acrílicos iluminados · Neón LED · Insumos mayoristas</p>
-    <div class="hero-badge-row">
-      <div class="badge">📍 <strong>Retiro:</strong> Moreno 1390, Tortuguitas</div>
-      <div class="badge">📱 <strong>WA:</strong> +54 9 11 2771-0460</div>
-      <div class="badge">💳 Efectivo / Transferencia</div>
-      <div class="badge">🚚 Envíos a todo el país</div>
+    <div class="logo-wrap">
+      <span class="logo-alto">Alto</span>
+      <span class="logo-impacto">IMPACTO</span>
     </div>
-    <a href="https://wa.me/5491127710460?text=Hola!%20Quiero%20cotizar%20cartelería" class="btn-wa-hero" target="_blank">💬 Pedir presupuesto por WhatsApp</a>
+    <p class="hero-tagline">Letras corpóreas · Frentes acrílicos iluminados · Neón LED · Insumos mayoristas</p>
+    <div class="hero-badge-row">
+      <div class="badge">📍 <strong>Moreno 1390, Tortuguitas</strong></div>
+      <div class="badge">📱 <strong>+54 9 11 2771-0460</strong></div>
+      <div class="badge">🚚 Envíos a todo el país</div>
+      <div class="badge">💳 Efectivo / Transferencia</div>
+    </div>
+    <div class="hero-ctas">
+      <a href="https://wa.me/5491127710460?text=Hola!%20Quiero%20cotizar%20cartelería" class="btn-wa-hero" target="_blank">💬 Pedir presupuesto por WhatsApp</a>
+      <button class="btn-cotizar-hero" onclick="document.querySelector('.cot-section').scrollIntoView({behavior:'smooth'})">🏷️ Cotizá online</button>
+    </div>
+  </div>
+  <div class="hero-scroll" onclick="document.querySelector('.servicios-section').scrollIntoView({behavior:'smooth'})">
+    <span>Ver más</span>
+    <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
   </div>
 </div>
+
+<section class="servicios-section">
+  <div class="section-inner">
+    <h2 class="section-title">Lo que hacemos</h2>
+    <p class="section-sub">Fabricación y venta de insumos para cartelería en GBA y todo el país</p>
+    <div class="servicios-grid">
+      <div class="servicio-card"><div class="serv-icon">🔠</div><h3>Letras Corpóreas</h3><p>Polyfán iluminado desde adentro. El clásico para frentes de locales, gastronomía y franquicias.</p></div>
+      <div class="servicio-card"><div class="serv-icon">🪟</div><h3>Frentes Acrílicos</h3><p>Acrílico opal o cristal con iluminación LED. Terminación premium para cualquier rubro.</p></div>
+      <div class="servicio-card"><div class="serv-icon">🌈</div><h3>Neón LED Flex</h3><p>Carteles de neón personalizados. Decoración, identidad de marca, bares y eventos.</p></div>
+      <div class="servicio-card"><div class="serv-icon">📦</div><h3>Insumos Mayoristas</h3><p>Tiras LED, fuentes 12V, módulos, acrílicos y polyfán. Stock permanente en Tortuguitas.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="galeria-section">
+  <div class="section-inner">
+    <h2 class="section-title">Galería de trabajos</h2>
+    <p class="section-sub">Cartelería iluminada para comercios, gastronomía y empresas</p>
+    <div class="galeria-grid">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop" alt="Carteles neon" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1523821741446-edb2b68bb7a0?w=600&q=80&fit=crop" alt="Neon LED" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1542601098-3adb3baeb1ec?w=600&q=80&fit=crop" alt="LED" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1567942712661-82b9b407abbf?w=600&q=80&fit=crop" alt="Neon" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80&fit=crop" alt="Letras" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1504297050568-910d24c426d3?w=600&q=80&fit=crop" alt="Carteleria" loading="lazy">
+    </div>
+    <p class="galeria-nota">📸 Próximamente fotos de nuestros trabajos reales — <a href="https://wa.me/5491127710460" style="color:var(--cyan)">consultanos por WhatsApp</a></p>
+  </div>
+</section>
 
 <!-- COTIZADOR (siempre visible) -->
 <div class="cot-section">
